@@ -6,7 +6,6 @@ RES_NAME=$(cvt $RESOLUTION | grep -o "\".*\"")
 echo "Resolution name: $RES_NAME"
 CAL_MODE=$(cvt $RESOLUTION | grep -o "\".*$")
 echo "Calculated mode: $CAL_MODE"
-#xrandr --newmode $CAL_MODE
 MON_NAME=$(xrandr --listmonitors | grep -o "  \w*$" | strings)
 echo "Monitor name: $MON_NAME"
 xrandr --addmode $MON_NAME $RES_NAME
